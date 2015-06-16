@@ -5,7 +5,7 @@ return array(
 	'default' => array(
 		'default_column' => array(
 			'default'    => 'column_default',
-			'type'       => 'text',
+			'type'       => 'Text',
 			'multiline'  => false,
 			'maxlength'  => false,
 		),
@@ -19,37 +19,37 @@ return array(
 		'double'  => array(),
 		'decimal' => array(),
 		'enum'    => array(
-			'type'       => 'enum',
+			'type'       => 'Enum',
 			'options'    => 'options',
 			'format'     => 'radio',
 		),
 		'set'      => array(
-			'type'       => 'enum',
+			'type'       => 'Enum',
 			'options'    => 'options',
 			'multiple'   => true,
 			'separator'  => ',',
 		),
 		'tinyint' => array(
-			'type'       => 'boolean',
+			'type'       => 'Boolean',
 		),
 		'tinytext'   => array(
-			'type'       => 'text',
+			'type'       => 'Text',
 			'multiline'  => 3,
 		),
 		'text'       => array(
-			'type'       => 'text',
+			'type'       => 'Text',
 			'multiline'  => 5,
 		),
 		'mediumtext' => array(
-			'type'       => 'text',
+			'type'       => 'Text',
 			'multiline'  => 7,
 		),
 		'longtext'   => array(
-			'type'       => 'text',
+			'type'       => 'Text',
 			'multiline'  => 12,
 		),
 		'date'       => array(
-			'type'       => 'temporal',
+			'type'       => 'Temporal',
 			'format'     => 'Y-m-d',
 			'year'       => true,
 			'month'      => true,
@@ -58,7 +58,7 @@ return array(
 			'wrapper'    => 'zform/wrappers/date',
 		),
 		'datetime'   => array(
-			'type'       => 'temporal',
+			'type'       => 'Temporal',
 			'format'     => DateTime::RFC3339,
 			'year'       => true,
 			'month'      => true,
@@ -69,7 +69,7 @@ return array(
 			'fields'     => ':month :day :year :hour :minute :second :meridien',
 		),
 		'timestamp'   => array(
-			'type'       => 'temporal',
+			'type'       => 'Temporal',
 			'format'     => DateTime::RFC3339,
 			'year'       => true,
 			'month'      => true,
@@ -80,7 +80,7 @@ return array(
 			'fields'     => ':month :day :year :hour :minute :second :meridien',
 		),
 		'time'        => array(
-			'type'       => 'temporal',
+			'type'       => 'Temporal',
 			'format'     => 'H:i:s',
 			'hour'       => true,
 			'minute'     => true,
