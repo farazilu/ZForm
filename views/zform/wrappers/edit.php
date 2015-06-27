@@ -4,6 +4,6 @@ echo Form::open();
 echo $form;
 echo Form::button('save', __('Save'), array(
     'type' => 'submit',
-    'class' => 'btn btn-default'
+    'class' => 'btn btn-primary'
 ));
 echo Form::close();
