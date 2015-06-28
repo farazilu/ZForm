@@ -3,6 +3,7 @@
 	<name>ZForm</name>
 	<comment></comment>
 	<projects>
+		<project>desitunesapp</project>
 		<project>kohana</project>
 		<project>modules</project>
 		<project>useradmin</project>
