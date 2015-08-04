@@ -33,7 +33,7 @@ foreach ($result as $entry) {
     $controller = Request::current()->controller();
     // $action = Request::current()->action();
     
-    $row['actions'] = HTML::anchor("/{$directory}/{$controller}/edit/" . $row['id'], __('Edit')) . ' | ' . HTML::anchor('admin_user/delete/' . $row['id'], __('Delete'));
+    $row['actions'] = HTML::anchor("/{$directory}/{$controller}/edit/" . $row['id'], __('Edit')) . ' | ' . HTML::anchor("/{$directory}/{$controller}/delete/" . $row['id'], __('Delete'));
     // set roles
     
     $data[] = $row;

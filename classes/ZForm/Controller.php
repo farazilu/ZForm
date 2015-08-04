@@ -52,10 +52,10 @@ class ZForm_Controller extends Controller_Admin
         // set the template title (see Controller_App for implementation)
         $this->template->title = __('User administration');
         // create a user
-        $user = ORM::factory($this->_this_model);
+        $model = ORM::factory($this->_this_model);
         // This is an example of how to use Kohana pagination
         // Get the total count for the pagination
-        $total = $user->count_all();
+        $total = $model->count_all();
         // Create a paginator
         $pagination = Pagination::factory(array(
             'total_items' => $total,
@@ -70,7 +70,7 @@ class ZForm_Controller extends Controller_Admin
         // Get the items for the query
         $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id'; // set default sorting direction here
         $dir = isset($_GET['dir']) ? 'DESC' : 'ASC';
-        $result = $user->limit($pagination->items_per_page)
+        $result = $model->limit($pagination->items_per_page)
             ->offset($pagination->offset)
             ->order_by($sort, $dir)
             ->find_all();
@@ -84,4 +84,13 @@ class ZForm_Controller extends Controller_Admin
 
     protected function _initialize()
     {}
+
+    public function action_delete()
+    {
+        $id = (int) Request::$current->param('id');
+        $model = ORM::factory($this->_this_model, $id);
+        if ($model->loaded()) {
+            $model->delete();
+        }
+    }
 }
