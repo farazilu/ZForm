@@ -1,3 +1,6 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+defined('SYSPATH') or die('No direct script access.');
 
-class ZForm extends Zahymaka_ZForm {}
+class ZForm extends Kohana_ZForm
+{
+}

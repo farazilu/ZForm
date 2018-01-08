@@ -1,7 +1,5 @@
 # Advanced
 
-The model below has most of the options you're likely to use with ZForm.
-
 	<?php defined('SYSPATH') or die('No direct access allowed.');
 	/// Columns
 	/// id - Primary Key
@@ -47,7 +45,7 @@ The model below has most of the options you're likely to use with ZForm.
 
 		protected $_z_field_config = array(
 			'gender' => array(
-				'type' => 'enum',
+				'type' => 'Enum',
 				'options' => array(
 					self::GENDER_MALE   => 'Male',
 					self::GENDER_FEMALE => 'Female',
@@ -83,6 +81,8 @@ The model below has most of the options you're likely to use with ZForm.
 
 	}
 
+The model above has most of the options you're likely to use with ZForm.
+
 ## Labels
 Your labels are formatted using a call to [Inflector::humanize()] and [ucfirst](http://php.net/ucfirst), so `first_name` becomes `First Name`. You can override a label by setting the appropriate item in 	[$_z_labels](../api/ZForm#property:_z_labels).
 
@@ -97,18 +97,6 @@ Even better, build yours in [initialize()](../api/ZForm#initialize):
 		$this->_z_fields[<foreign key>] = new ZForm_Field_Enum(
 			$this->field_name(<foreign key>),
 			$this->field_id(<foreign key>),
-			...
-
-A simpler way of doing the above is:
-
-	public function initialize()
-	{
-		$this->_z_field_config[<foreign key>]['type'] = 'enum';
-			...
-
-	public function finalize()
-	{
-		$this->_z_fields[<foreign key>]->options = <options>;
 			...
 
 ## Field exclusion
@@ -144,6 +132,13 @@ There are four field types that come with ZForm, although you are free to extend
 	Mexico
 	...
 	United States
+
+
+## Removing all items many-to-many relationship
+
+This is just an extra. To remove all matching items in a many-to-many relationship, simply call [remove_all()](../api/ZForm#remove_all), using the alias as the argument.
+
+	$person->remove_all('options');
 
 ## Conclusion
 
